@@ -43,16 +43,4 @@
   // Init
   setActive(0);
   updateFromScroll();
-
-  // Clicking a link scrolls straight to its full section below the hero
-  dotLinks.forEach((link) => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute('href').slice(1);
-      const targetSection = document.getElementById(targetId);
-      if (targetSection) {
-        targetSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
 })();

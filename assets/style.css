@@ -34,54 +34,6 @@ html, body {
   overflow: hidden;
 }
 
-/* ---------- Top bar (inside hero, acts as the real nav) ---------- */
-.hero-topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 22px 32px;
-  z-index: 6;
-  flex-shrink: 0;
-}
-
-.brand-script {
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  font-size: 20px;
-  color: var(--ink);
-}
-
-.menu-label {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  color: var(--ink);
-}
-
-.menu-lines {
-  display: inline-block;
-  width: 22px;
-  height: 1px;
-  background: var(--ink);
-  position: relative;
-}
-
-.menu-lines::before,
-.menu-lines::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: var(--ink);
-}
-.menu-lines::before { top: -5px; }
-.menu-lines::after { top: 5px; }
-
 /* ---------- Big overlapping wordmark ---------- */
 .hero-wordmark {
   font-family: var(--serif);
@@ -91,6 +43,7 @@ html, body {
   text-align: center;
   color: var(--ink);
   margin: 0 0 clamp(-30px, -3.4vw, -18px) 0;
+  padding-top: clamp(28px, 5vw, 52px);
   position: relative;
   z-index: 5;
   flex-shrink: 0;
@@ -331,18 +284,17 @@ html, body {
   100% { top: 100%; }
 }
 
-/* ---------- Stub sections ---------- */
+/* ---------- Standalone "coming soon" pages ---------- */
 .page-stub {
-  min-height: 60vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: 12px;
-  border-top: 1px solid rgba(43, 38, 32, 0.08);
+  gap: 16px;
   padding: 40px 20px;
-  background: var(--cream-2);
+  background: var(--cream);
 }
 
 .page-stub h2 {
@@ -358,6 +310,22 @@ html, body {
   margin: 0;
   max-width: 480px;
   font-size: 15px;
+}
+
+.back-link {
+  margin-top: 8px;
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink-faint);
+  padding-bottom: 2px;
+}
+
+.back-link:hover {
+  border-color: var(--ink);
 }
 
 /* ---------- Responsive: mobile = full-bleed photo + centered link list ---------- */
@@ -433,6 +401,3 @@ html, body {
   }
 }
 
-@media (max-width: 600px) {
-  .hero-topbar { padding: 16px 20px; }
-}
