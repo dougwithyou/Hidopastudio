@@ -360,50 +360,79 @@ html, body {
   font-size: 15px;
 }
 
-/* ---------- Responsive ---------- */
+/* ---------- Responsive: mobile = full-bleed photo + centered link list ---------- */
 @media (max-width: 860px) {
-  .split-photo { display: none; }
-  .split-block {
+  .hero-wordmark { display: none; }
+
+  .split-photo {
     flex: 1 1 100%;
-    padding: 28px 20px 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 14px;
+    align-items: flex-end;
   }
-  .split-label {
-    position: static;
-    transform: none;
-  }
-  .thumb-row { display: flex; gap: 10px; }
-  .thumb {
-    position: static;
-    width: 78px;
-    flex-shrink: 0;
-    aspect-ratio: 3 / 4;
-    box-shadow: none;
-    animation-delay: 0s !important;
-  }
-  .thumb-c { display: none; }
-  .split-caption { font-size: 20px; align-self: flex-start; text-align: left; }
-  .dot-nav {
-    right: 50%;
-    top: auto;
-    bottom: 88px;
-    transform: translateX(50%);
-  }
-  .dot-nav ul { flex-direction: row; gap: 16px; }
-  .dot-link { flex-direction: column-reverse; gap: 6px; }
-  .dot-label {
+  .split-photo::after {
+    content: "";
     position: absolute;
-    bottom: 18px;
-    transform: translateX(0) translateY(4px);
-    font-size: 10px;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(180deg, rgba(10, 8, 6, 0.55) 0%, rgba(10, 8, 6, 0.35) 40%, rgba(10, 8, 6, 0.55) 100%);
   }
-  .dot-link:not(.active) .dot-label { display: none; }
+  .split-photo > .ph-label {
+    display: none;
+  }
+  .split-block,
+  .split-label,
+  .split-caption {
+    display: none;
+  }
+
+  .dot-nav {
+    position: absolute;
+    inset: 0;
+    transform: none;
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+  .dot-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    pointer-events: auto;
+    width: 100%;
+    padding: 0 20px;
+  }
+  .dot-link {
+    justify-content: center;
+    gap: 0;
+    text-align: center;
+    width: 100%;
+  }
+  .dot { display: none; }
+  .dot-label {
+    position: static;
+    opacity: 1;
+    transform: none;
+    font-family: var(--serif);
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    font-size: clamp(19px, 7vw, 30px);
+    font-weight: 400;
+    color: rgba(244, 241, 234, 0.4);
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+    transition: color 0.6s ease, font-weight 0.3s ease;
+    white-space: normal;
+    line-height: 1.15;
+  }
+  .dot-nav li:nth-child(odd) .dot-label {
+    font-weight: 600;
+    font-size: clamp(22px, 8vw, 34px);
+  }
+  .dot-link.active .dot-label {
+    color: var(--cream);
+  }
 }
 
 @media (max-width: 600px) {
   .hero-topbar { padding: 16px 20px; }
-  .hero-wordmark { font-size: clamp(30px, 9vw, 44px); }
 }
