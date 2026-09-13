@@ -84,6 +84,18 @@ html, body {
     linear-gradient(145deg, color-mix(in srgb, var(--tone) 70%, black 10%), color-mix(in srgb, var(--tone) 60%, white 10%));
 }
 
+.split-photo--real {
+  background-size: cover;
+  background-position: center;
+}
+
+.split-photo--real::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20, 16, 12, 0.3) 0%, rgba(20, 16, 12, 0) 25%, rgba(20, 16, 12, 0) 75%, rgba(20, 16, 12, 0.35) 100%);
+}
+
 .split-block {
   flex: 1 1 50%;
   position: relative;
