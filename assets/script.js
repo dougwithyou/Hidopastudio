@@ -1,8 +1,7 @@
 (() => {
   const heroScroll = document.getElementById('hero');
   const dotLinks = Array.from(heroScroll.querySelectorAll('.dot-link'));
-  const collageSets = Array.from(heroScroll.querySelectorAll('.collage-set'));
-  const eyebrow = document.getElementById('eyebrow');
+  const splitSets = Array.from(heroScroll.querySelectorAll('.split-set'));
 
   let ticking = false;
   let activeIndex = -1;
@@ -15,14 +14,9 @@
       link.classList.toggle('active', Number(link.dataset.index) === index);
     });
 
-    collageSets.forEach((set) => {
+    splitSets.forEach((set) => {
       set.classList.toggle('active', Number(set.dataset.set) === index);
     });
-
-    const activeLink = dotLinks.find((link) => Number(link.dataset.index) === index);
-    if (activeLink && eyebrow) {
-      eyebrow.textContent = activeLink.dataset.eyebrow;
-    }
   }
 
   function updateFromScroll() {

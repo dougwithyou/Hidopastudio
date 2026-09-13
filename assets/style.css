@@ -18,58 +18,6 @@ html, body {
   font-family: var(--sans);
 }
 
-/* ---------- Fixed header ---------- */
-.site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 30;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 22px 32px;
-  pointer-events: none;
-  mix-blend-mode: difference;
-}
-
-.wordmark-small {
-  font-family: var(--serif);
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  font-size: 13px;
-  color: var(--cream);
-}
-
-.menu-label {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  color: var(--cream);
-}
-
-.menu-lines {
-  display: inline-block;
-  width: 22px;
-  height: 1px;
-  background: var(--cream);
-  position: relative;
-}
-
-.menu-lines::before,
-.menu-lines::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: var(--cream);
-}
-.menu-lines::before { top: -5px; }
-.menu-lines::after { top: 5px; }
-
 /* ---------- Hero scroll mechanism ---------- */
 .hero-scroll {
   position: relative;
@@ -81,118 +29,191 @@ html, body {
   top: 0;
   height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
   background: var(--cream);
+  overflow: hidden;
 }
 
-.hero-inner {
-  width: min(1180px, 92vw);
+/* ---------- Top bar (inside hero, acts as the real nav) ---------- */
+.hero-topbar {
   display: flex;
-  flex-direction: column;
-  gap: 28px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 32px;
+  z-index: 6;
+  flex-shrink: 0;
 }
 
-.hero-heading {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.hero-wordmark {
+.brand-script {
   font-family: var(--serif);
-  font-weight: 300;
-  letter-spacing: 0.06em;
-  font-size: clamp(40px, 7vw, 92px);
-  margin: 0;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  font-size: 20px;
   color: var(--ink);
 }
 
-.hero-eyebrow {
-  margin: 0;
-  font-size: 12px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  transition: opacity 0.4s ease;
+.menu-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--ink);
 }
 
-/* ---------- Collage stage ---------- */
-.collage-stage {
+.menu-lines {
+  display: inline-block;
+  width: 22px;
+  height: 1px;
+  background: var(--ink);
   position: relative;
-  height: min(50vh, 480px);
 }
 
-.collage-set {
+.menu-lines::before,
+.menu-lines::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--ink);
+}
+.menu-lines::before { top: -5px; }
+.menu-lines::after { top: 5px; }
+
+/* ---------- Big overlapping wordmark ---------- */
+.hero-wordmark {
+  font-family: var(--serif);
+  font-weight: 300;
+  letter-spacing: 0.07em;
+  font-size: clamp(38px, 6.2vw, 84px);
+  text-align: center;
+  color: var(--ink);
+  margin: 0 0 clamp(-30px, -3.4vw, -18px) 0;
+  position: relative;
+  z-index: 5;
+  flex-shrink: 0;
+  text-shadow: 0 2px 26px rgba(244, 241, 234, 0.9), 0 0 46px rgba(244, 241, 234, 0.6);
+  pointer-events: none;
+}
+
+/* ---------- Split stage: photo left / color block right ---------- */
+.split-stage {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+
+.split-set {
   position: absolute;
   inset: 0;
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 22px;
+  display: flex;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.9s ease;
 }
 
-.collage-set.active {
+.split-set.active {
   opacity: 1;
   pointer-events: auto;
 }
 
-.collage-tall {
-  border-radius: 6px;
-  background: linear-gradient(155deg, color-mix(in srgb, var(--ph-color) 85%, white 15%), var(--ph-color));
+.split-photo {
+  flex: 1 1 50%;
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: flex-end;
-  padding: 18px;
-  box-shadow: 0 18px 40px rgba(43, 38, 32, 0.12);
+  padding: 24px;
+  background:
+    linear-gradient(180deg, rgba(20, 16, 12, 0.35) 0%, rgba(20, 16, 12, 0) 22%, rgba(20, 16, 12, 0) 78%, rgba(20, 16, 12, 0.3) 100%),
+    linear-gradient(145deg, color-mix(in srgb, var(--tone) 70%, black 10%), color-mix(in srgb, var(--tone) 60%, white 10%));
 }
 
-.collage-block {
+.split-block {
+  flex: 1 1 50%;
   position: relative;
-  border-radius: 6px;
-  background: var(--block-color);
+  background: var(--tone);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: clamp(20px, 3vw, 40px);
+  padding: clamp(24px, 4vw, 56px);
   overflow: visible;
-  box-shadow: 0 18px 40px rgba(43, 38, 32, 0.12);
 }
 
-.collage-small {
+.split-label {
   position: absolute;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  left: 0;
+  top: 46%;
+  transform: translateY(-50%);
+  margin: 0;
+  font-family: var(--serif);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: clamp(13px, 1.5vw, 19px);
+  color: var(--cream);
+  white-space: nowrap;
+  z-index: 3;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.25);
+}
+
+.thumb {
+  position: absolute;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.38);
   display: flex;
   align-items: flex-end;
-  padding: 10px;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+  padding: 8px;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+  opacity: 0;
 }
 
-.collage-small.small-a {
-  top: -12%;
-  right: 12%;
-  width: 34%;
+.split-set.active .thumb {
+  animation: thumbPop 0.75s cubic-bezier(0.22, 0.9, 0.32, 1) forwards;
+}
+
+.split-set.active .thumb-a { animation-delay: 0.05s; }
+.split-set.active .thumb-b { animation-delay: 0.22s; }
+.split-set.active .thumb-c { animation-delay: 0.4s; }
+
+@keyframes thumbPop {
+  from { opacity: 0; transform: translateY(18px) scale(0.92); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.thumb-a {
+  top: 4%;
+  left: 38%;
+  width: 28%;
   aspect-ratio: 3 / 4;
 }
 
-.collage-small.small-b {
-  bottom: -10%;
-  right: 34%;
-  width: 30%;
+.thumb-b {
+  top: 34%;
+  right: 6%;
+  width: 26%;
   aspect-ratio: 4 / 5;
 }
 
-.collage-caption {
+.thumb-c {
+  bottom: 8%;
+  left: 36%;
+  width: 25%;
+  aspect-ratio: 3 / 4;
+}
+
+.split-caption {
   font-family: var(--serif);
   font-style: italic;
   font-weight: 400;
   font-size: clamp(20px, 2.6vw, 32px);
   color: var(--cream);
   margin: 0;
+  align-self: flex-end;
+  text-align: right;
+  z-index: 2;
 }
 
 .ph-label {
@@ -205,10 +226,10 @@ html, body {
 /* ---------- Dot navigation ---------- */
 .dot-nav {
   position: absolute;
-  right: 40px;
+  right: 36px;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 5;
+  z-index: 6;
 }
 
 .dot-nav ul {
@@ -226,7 +247,6 @@ html, body {
   justify-content: flex-end;
   gap: 12px;
   text-decoration: none;
-  color: var(--ink);
 }
 
 .dot-label {
@@ -234,17 +254,18 @@ html, body {
   font-size: 12px;
   letter-spacing: 0.04em;
   white-space: nowrap;
-  color: var(--ink-muted);
+  color: rgba(244, 241, 234, 0.6);
   opacity: 0;
   transform: translateX(8px);
   transition: opacity 0.35s ease, transform 0.35s ease, color 0.35s ease;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.25);
 }
 
 .dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  border: 1px solid var(--ink-faint);
+  border: 1px solid rgba(244, 241, 234, 0.55);
   background: transparent;
   transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease;
   flex-shrink: 0;
@@ -257,37 +278,38 @@ html, body {
 }
 
 .dot-link.active .dot-label {
-  color: var(--ink);
+  color: var(--cream);
   font-weight: 500;
 }
 
 .dot-link.active .dot {
-  background: var(--ink);
-  border-color: var(--ink);
+  background: var(--cream);
+  border-color: var(--cream);
   transform: scale(1.3);
 }
 
 /* ---------- Scroll cue ---------- */
 .scroll-cue {
   position: absolute;
-  bottom: 28px;
+  bottom: 24px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  z-index: 2;
-  color: var(--ink-muted);
+  z-index: 6;
+  color: var(--cream);
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
 }
 
 .scroll-cue-line {
   width: 1px;
   height: 34px;
-  background: var(--ink-faint);
+  background: rgba(244, 241, 234, 0.55);
   position: relative;
   overflow: hidden;
 }
@@ -299,7 +321,7 @@ html, body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--ink);
+  background: var(--cream);
   animation: scrollDrip 1.8s ease-in-out infinite;
 }
 
@@ -340,16 +362,34 @@ html, body {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 860px) {
-  .collage-set { grid-template-columns: 1fr; }
-  .collage-tall { display: none; }
-  .collage-block { height: 100%; padding: 20px; }
-  .collage-small { position: static; width: 76px; aspect-ratio: 3/4; margin-bottom: 12px; box-shadow: none; }
-  .collage-small.small-b { display: none; }
-  .collage-caption { font-size: 20px; }
+  .split-photo { display: none; }
+  .split-block {
+    flex: 1 1 100%;
+    padding: 28px 20px 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 14px;
+  }
+  .split-label {
+    position: static;
+    transform: none;
+  }
+  .thumb-row { display: flex; gap: 10px; }
+  .thumb {
+    position: static;
+    width: 78px;
+    flex-shrink: 0;
+    aspect-ratio: 3 / 4;
+    box-shadow: none;
+    animation-delay: 0s !important;
+  }
+  .thumb-c { display: none; }
+  .split-caption { font-size: 20px; align-self: flex-start; text-align: left; }
   .dot-nav {
     right: 50%;
     top: auto;
-    bottom: 90px;
+    bottom: 88px;
     transform: translateX(50%);
   }
   .dot-nav ul { flex-direction: row; gap: 16px; }
@@ -364,7 +404,6 @@ html, body {
 }
 
 @media (max-width: 600px) {
-  .site-header { padding: 16px 20px; }
-  .hero-inner { gap: 18px; }
-  .collage-stage { height: 42vh; }
+  .hero-topbar { padding: 16px 20px; }
+  .hero-wordmark { font-size: clamp(30px, 9vw, 44px); }
 }
