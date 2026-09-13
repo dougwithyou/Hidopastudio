@@ -328,6 +328,36 @@ html, body {
   border-color: var(--ink);
 }
 
+.page-stub--photo {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  isolation: isolate;
+}
+
+.page-stub--photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(20, 16, 12, 0.45) 0%, rgba(20, 16, 12, 0.35) 45%, rgba(20, 16, 12, 0.6) 100%);
+}
+
+.page-stub--photo h2,
+.page-stub--photo p {
+  color: var(--cream);
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+}
+
+.back-link--light {
+  color: var(--cream);
+  border-bottom-color: rgba(244, 241, 234, 0.4);
+}
+
+.back-link--light:hover {
+  border-color: var(--cream);
+}
+
 /* ---------- Responsive: mobile = full-bleed photo + centered link list ---------- */
 @media (max-width: 860px) {
   .hero-wordmark { display: none; }
