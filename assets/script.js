@@ -1,10 +1,11 @@
 (() => {
-  const heroScroll = document.getElementById('hero');
-  const dotLinks = Array.from(heroScroll.querySelectorAll('.dot-link'));
-  const splitSets = Array.from(heroScroll.querySelectorAll('.split-set'));
+  const hero = document.getElementById('hero');
+  const dotLinks = Array.from(hero.querySelectorAll('.dot-link'));
+  const splitSets = Array.from(hero.querySelectorAll('.split-set'));
+  const AUTOPLAY_MS = 2600;
 
-  let ticking = false;
   let activeIndex = -1;
+  let timer = null;
 
   function setActive(index) {
     if (index === activeIndex) return;
@@ -19,28 +20,30 @@
     });
   }
 
-  function updateFromScroll() {
-    const total = heroScroll.offsetHeight - window.innerHeight;
-    const rect = heroScroll.getBoundingClientRect();
-    const scrolled = Math.min(Math.max(-rect.top, 0), total);
-    const progress = total > 0 ? scrolled / total : 0;
-    const steps = dotLinks.length;
-    const index = Math.min(steps - 1, Math.floor(progress * steps));
-    setActive(index);
-    ticking = false;
+  function goToNext() {
+    setActive((activeIndex + 1) % dotLinks.length);
   }
 
-  function onScroll() {
-    if (!ticking) {
-      window.requestAnimationFrame(updateFromScroll);
-      ticking = true;
-    }
+  function startAutoplay() {
+    stopAutoplay();
+    timer = setInterval(goToNext, AUTOPLAY_MS);
   }
 
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll);
+  function stopAutoplay() {
+    if (timer) clearInterval(timer);
+    timer = null;
+  }
 
   // Init
   setActive(0);
-  updateFromScroll();
+  startAutoplay();
+
+  // Pause while the tab is hidden, resume when it's visible again
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      stopAutoplay();
+    } else {
+      startAutoplay();
+    }
+  });
 })();
