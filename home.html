@@ -3,116 +3,197 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Home — DOPA Studio</title>
+<title>DOPA Studio — Fotografía &amp; Video | DMV</title>
 <meta name="description" content="DOPA Studio: fotografía y video de bodas, sesiones, eventos y contenido para marcas en el área DMV (DC, Maryland, Virginia). Bilingüe — English &amp; Español.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
+<body class="hv2">
 
-<header class="site-nav">
-  <a href="index.html" class="site-nav__logo">DOPA STUDIO</a>
-  <nav class="site-nav__links">
+<header class="hv2-nav">
+  <a href="index.html" class="hv2-nav__logo">
+    <img src="assets/images/logo.jpg" alt="DOPA Studio">
+  </a>
+  <nav class="hv2-nav__links">
     <a href="weddings.html">Weddings</a>
     <a href="book-sessions.html">Book &amp; Sessions</a>
     <a href="events.html">Events</a>
     <a href="content-lab.html">Content Lab</a>
   </nav>
+  <a href="book-sessions.html" class="hv2-nav__cta" data-key="nav.cta_label" data-key-href="nav.cta_href">Reservar</a>
 </header>
 
-<!-- WELCOME -->
-<section class="welcome">
-  <p class="welcome__eyebrow">DMV · Fotografía &amp; Video · Bilingüe</p>
-  <h1 class="welcome__title">Real moments,<br>real story.</h1>
-  <p class="welcome__copy">
-    Somos Doug &amp; Paola — DOPA Studio. Documentamos bodas, sesiones y eventos
-    en el área de Washington DC, Maryland y Virginia, con un estilo cálido y directo.
-    <br>
-    We photograph and film real moments across the DMV — warm, honest, and true to you.
-  </p>
-</section>
-
-<!-- SERVICES -->
-<section class="services">
-  <div class="services__grid">
-    <a class="service-card" href="weddings.html" style="--tone:#a9836f;">
-      <div class="service-card__photo"><span class="ph-label">Foto — Weddings</span></div>
-      <div class="service-card__body">
-        <h3>Weddings</h3>
-        <p>Bodas documentadas de principio a fin, entregadas completamente editadas.</p>
-        <span class="service-card__link">Ver más →</span>
-      </div>
-    </a>
-    <a class="service-card" href="book-sessions.html" style="--tone:#7a7658;">
-      <div class="service-card__photo"><span class="ph-label">Foto — Book &amp; Sessions</span></div>
-      <div class="service-card__body">
-        <h3>Book &amp; Sessions</h3>
-        <p>Retratos, maternidad y sesiones en casa — agenda tu fecha.</p>
-        <span class="service-card__link">Ver más →</span>
-      </div>
-    </a>
-    <a class="service-card" href="events.html" style="--tone:#ab8f72;">
-      <div class="service-card__photo"><span class="ph-label">Foto — Events</span></div>
-      <div class="service-card__body">
-        <h3>Events</h3>
-        <p>Cobertura completa de tu evento, sin límite de fotos entregadas.</p>
-        <span class="service-card__link">Ver más →</span>
-      </div>
-    </a>
-  </div>
-</section>
-
-<!-- PORTFOLIO -->
-<section class="portfolio">
-  <h2 class="portfolio__title">Nuestro trabajo <span>· Recent work</span></h2>
-  <div class="portfolio__grid">
-    <div class="portfolio__tile" style="--tone:#6f6b52;"><span class="ph-label">Foto</span></div>
-    <div class="portfolio__tile" style="--tone:#a9836f;"><span class="ph-label">Foto</span></div>
-    <div class="portfolio__tile" style="--tone:#7a7658;"><span class="ph-label">Foto</span></div>
-    <div class="portfolio__tile" style="--tone:#ab8f72;"><span class="ph-label">Foto</span></div>
-    <div class="portfolio__tile" style="--tone:#8c6f52;"><span class="ph-label">Foto</span></div>
-    <div class="portfolio__tile" style="--tone:#6f6b52;"><span class="ph-label">Foto</span></div>
-  </div>
-</section>
-
-<!-- HIDOPALAB -->
-<section class="lab-block">
-  <div class="lab-block__inner">
-    <p class="lab-block__eyebrow">hidopaLab</p>
-    <h2 class="lab-block__title">Content para tu marca, sin contratar equipo completo.</h2>
-    <p class="lab-block__copy">
-      Membresía por niveles que combina creación de contenido con manejo de redes
-      sociales — una alternativa más económica que contratar personal a tiempo completo.
-      <br>
-      Brand content and social media management, without the cost of a full-time hire.
-    </p>
-    <a href="content-lab.html" class="lab-block__cta">Conoce hidopaLab →</a>
-  </div>
-</section>
-
-<!-- TESTIMONIALS (pendiente de reseñas reales) -->
-<section class="testimonials">
-  <h2>Lo que dicen nuestros clientes</h2>
-  <p class="testimonials__pending">Próximamente — reseñas reales de parejas y marcas que confiaron en nosotros.</p>
-</section>
-
-<!-- CTA + FOOTER -->
-<footer class="site-footer">
-  <div class="site-footer__cta">
-    <h2>¿Hablamos de tu proyecto?</h2>
-    <p>Cuéntanos qué estás planeando y te respondemos pronto.</p>
-    <div class="site-footer__buttons">
-      <a href="#" class="btn btn--primary">WhatsApp</a>
-      <a href="#" class="btn btn--secondary">Instagram</a>
+<!-- HERO -->
+<section class="hv2-hero" data-key-bg="hero.image" style="background-image: url('assets/images/weddings-hero.jpg');">
+  <div class="hv2-hero__scrim"></div>
+  <div class="hv2-hero__content">
+    <p class="hv2-hero__eyebrow" data-key="hero.eyebrow">DMV · Fotografía &amp; Video · Bilingüe</p>
+    <h1 class="hv2-hero__title" data-key="hero.title">Momentos reales. Historias reales.</h1>
+    <p class="hv2-hero__subtitle" data-key="hero.subtitle">Doug &amp; Paola — DOPA Studio. Documentamos bodas, sesiones y eventos en Washington DC, Maryland y Virginia.</p>
+    <div class="hv2-hero__buttons">
+      <a href="book-sessions.html" class="hv2-btn hv2-btn--light" data-key="hero.cta_primary_label" data-key-href="hero.cta_primary_href">Agenda tu sesión</a>
+      <a href="weddings.html" class="hv2-btn hv2-btn--ghost" data-key="hero.cta_secondary_label" data-key-href="hero.cta_secondary_href">Ver bodas</a>
     </div>
   </div>
-  <div class="site-footer__meta">
-    <span>DOPA Studio · DC · Maryland · Virginia</span>
-    <span>© 2026 DOPA Studio</span>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="hv2-trust">
+  <div class="hv2-trust__track">
+    <span>Washington DC</span>
+    <span>·</span>
+    <span>Maryland</span>
+    <span>·</span>
+    <span>Virginia</span>
+    <span>·</span>
+    <span>Bilingüe · EN/ES</span>
+    <span>·</span>
+    <span>100% editadas, sin límite</span>
+    <span>·</span>
+  </div>
+</section>
+
+<!-- FEATURES / SERVICES -->
+<section class="hv2-features">
+  <p class="hv2-eyebrow" data-key="features.eyebrow">Servicios</p>
+  <h2 class="hv2-section-title" data-key="features.title">Todo lo que necesitas para tu historia</h2>
+
+  <div class="hv2-features__grid">
+    <a class="hv2-card" href="weddings.html" style="--tone:#a9836f;">
+      <div class="hv2-card__photo"><span class="ph-label">Foto — Weddings</span></div>
+      <div class="hv2-card__body">
+        <h3 data-key="features.cards.0.title">Weddings</h3>
+        <p data-key="features.cards.0.copy">Bodas documentadas de principio a fin, entregadas completamente editadas.</p>
+        <span class="hv2-card__link">Ver más →</span>
+      </div>
+    </a>
+    <a class="hv2-card" href="book-sessions.html" style="--tone:#7a7658;">
+      <div class="hv2-card__photo"><span class="ph-label">Foto — Book &amp; Sessions</span></div>
+      <div class="hv2-card__body">
+        <h3 data-key="features.cards.1.title">Book &amp; Sessions</h3>
+        <p data-key="features.cards.1.copy">Retratos, maternidad y sesiones en casa — agenda tu fecha.</p>
+        <span class="hv2-card__link">Ver más →</span>
+      </div>
+    </a>
+    <a class="hv2-card" href="events.html" style="--tone:#ab8f72;">
+      <div class="hv2-card__photo"><span class="ph-label">Foto — Events</span></div>
+      <div class="hv2-card__body">
+        <h3 data-key="features.cards.2.title">Events</h3>
+        <p data-key="features.cards.2.copy">Cobertura completa de tu evento, sin límite de fotos entregadas.</p>
+        <span class="hv2-card__link">Ver más →</span>
+      </div>
+    </a>
+  </div>
+
+  <a class="hv2-highlight" href="content-lab.html" style="--tone:#8c6f52;">
+    <div class="hv2-highlight__text">
+      <p class="hv2-highlight__eyebrow" data-key="features.highlight.eyebrow">hidopaLab</p>
+      <h3 data-key="features.highlight.title">Content para tu marca, sin contratar equipo completo</h3>
+      <p data-key="features.highlight.copy">Membresía por niveles que combina creación de contenido con manejo de redes sociales — una alternativa más económica que contratar personal a tiempo completo.</p>
+      <span class="hv2-card__link" data-key="features.highlight.cta_label">Conoce hidopaLab →</span>
+    </div>
+    <div class="hv2-highlight__photo"><span class="ph-label">Foto — Content Lab</span></div>
+  </a>
+</section>
+
+<!-- BENEFITS -->
+<section class="hv2-benefits">
+  <div class="hv2-benefits__photo" data-key-bg="benefits.image" style="background-image: url('assets/images/weddings-hero.jpg');"></div>
+  <div class="hv2-benefits__text">
+    <p class="hv2-eyebrow" data-key="benefits.eyebrow">Por qué DOPA Studio</p>
+    <h2 class="hv2-section-title" data-key="benefits.title">Hecho con intención, de principio a fin</h2>
+    <ul class="hv2-benefits__list">
+      <li>
+        <h4 data-key="benefits.items.0.title">Bilingüe de verdad</h4>
+        <p data-key="benefits.items.0.copy">Español e inglés como parte de la marca, no como traducción.</p>
+      </li>
+      <li>
+        <h4 data-key="benefits.items.1.title">Sin límite de fotos</h4>
+        <p data-key="benefits.items.1.copy">Todas las fotos de tu evento, entregadas 100% editadas.</p>
+      </li>
+      <li>
+        <h4 data-key="benefits.items.2.title">Depósito simple</h4>
+        <p data-key="benefits.items.2.copy">50% para reservar tu fecha, el resto el día del evento.</p>
+      </li>
+      <li>
+        <h4 data-key="benefits.items.3.title">Área DMV completa</h4>
+        <p data-key="benefits.items.3.copy">Washington DC, Maryland y Virginia — donde estés, llegamos.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="hv2-testimonials">
+  <p class="hv2-eyebrow" data-key="testimonials.eyebrow">Clientes</p>
+  <h2 class="hv2-section-title" data-key="testimonials.title">Lo que dicen de nosotros</h2>
+  <p class="hv2-testimonials__pending" data-key="testimonials.pending_note">Reseñas reales próximamente — este espacio ya está listo para recibirlas.</p>
+  <div class="hv2-testimonials__grid">
+    <div class="hv2-testimonial-card"><span class="hv2-quote-mark">"</span></div>
+    <div class="hv2-testimonial-card"><span class="hv2-quote-mark">"</span></div>
+    <div class="hv2-testimonial-card"><span class="hv2-quote-mark">"</span></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="hv2-faq">
+  <p class="hv2-eyebrow" data-key="faq.eyebrow">Preguntas frecuentes</p>
+  <h2 class="hv2-section-title" data-key="faq.title">Todo lo que necesitas saber</h2>
+  <div class="hv2-faq__list">
+    <details class="hv2-faq__item" open>
+      <summary><span data-key="faq.items.0.q">¿Cómo funciona el depósito?</span><span class="hv2-faq__icon">+</span></summary>
+      <p data-key="faq.items.0.a">Pedimos un 50% para reservar tu fecha, y el saldo restante se paga el día del evento.</p>
+    </details>
+    <details class="hv2-faq__item">
+      <summary><span data-key="faq.items.1.q">¿Cuántas fotos recibo?</span><span class="hv2-faq__icon">+</span></summary>
+      <p data-key="faq.items.1.a">Todas las fotos del evento, entregadas 100% editadas — sin límite de cantidad.</p>
+    </details>
+    <details class="hv2-faq__item">
+      <summary><span data-key="faq.items.2.q">¿En qué áreas trabajan?</span><span class="hv2-faq__icon">+</span></summary>
+      <p data-key="faq.items.2.a">Cubrimos todo el área DMV: Washington DC, Maryland y Virginia.</p>
+    </details>
+    <details class="hv2-faq__item">
+      <summary><span data-key="faq.items.3.q">¿Hablan español?</span><span class="hv2-faq__icon">+</span></summary>
+      <p data-key="faq.items.3.a">Sí — DOPA Studio es bilingüe de verdad, en inglés y español, en cada parte del proceso.</p>
+    </details>
+    <details class="hv2-faq__item">
+      <summary><span data-key="faq.items.4.q">¿Qué es hidopaLab?</span><span class="hv2-faq__icon">+</span></summary>
+      <p data-key="faq.items.4.a">Nuestra membresía de contenido y manejo de redes sociales para marcas, pensada como alternativa a contratar personal a tiempo completo.</p>
+    </details>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="hv2-final" data-key-bg="final_cta.image" style="background-image: url('assets/images/weddings-hero.jpg');">
+  <div class="hv2-final__scrim"></div>
+  <div class="hv2-final__content">
+    <h2 data-key="final_cta.title">¿Hablamos de tu historia?</h2>
+    <p data-key="final_cta.copy">Cuéntanos qué estás planeando y te respondemos pronto.</p>
+    <div class="hv2-hero__buttons">
+      <a href="#" class="hv2-btn hv2-btn--light" data-key="final_cta.cta_primary_label" data-key-href="final_cta.cta_primary_href">WhatsApp</a>
+      <a href="#" class="hv2-btn hv2-btn--ghost" data-key="final_cta.cta_secondary_label" data-key-href="final_cta.cta_secondary_href">Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="hv2-footer">
+  <img src="assets/images/logo.jpg" alt="DOPA Studio" class="hv2-footer__logo">
+  <nav class="hv2-footer__links">
+    <a href="weddings.html">Weddings</a>
+    <a href="book-sessions.html">Book &amp; Sessions</a>
+    <a href="events.html">Events</a>
+    <a href="content-lab.html">Content Lab</a>
+  </nav>
+  <div class="hv2-footer__meta">
+    <span data-key="footer.area">DOPA Studio · DC · Maryland · Virginia</span>
+    <span data-key="footer.copyright">© 2026 DOPA Studio</span>
   </div>
 </footer>
 
+<script src="assets/content.js"></script>
+<script>loadAndApplyContent();</script>
 </body>
 </html>

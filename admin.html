@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — DOPA Studio</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<link rel="stylesheet" href="assets/admin.css">
+</head>
+<body>
+
+<div id="login-screen" class="admin-login">
+  <form id="login-form" class="admin-login__card">
+    <h1>DOPA Studio</h1>
+    <p>Panel de administrador</p>
+    <input type="email" id="login-email" placeholder="Email" autocomplete="username" required>
+    <input type="password" id="login-password" placeholder="Contraseña" autocomplete="current-password" required>
+    <button type="submit">Entrar</button>
+    <p id="login-error" class="admin-error" hidden></p>
+  </form>
+</div>
+
+<div id="admin-screen" class="admin-app" hidden>
+  <header class="admin-header">
+    <span class="admin-header__title">DOPA Studio — Editor de Home</span>
+    <div class="admin-header__actions">
+      <span id="save-status" class="admin-save-status"></span>
+      <button id="save-btn" class="admin-btn admin-btn--primary">Guardar cambios</button>
+      <button id="logout-btn" class="admin-btn">Salir</button>
+    </div>
+  </header>
+
+  <main id="admin-form" class="admin-form"></main>
+</div>
+
+<script src="assets/content.js"></script>
+<script src="assets/admin.js"></script>
+</body>
+</html>
