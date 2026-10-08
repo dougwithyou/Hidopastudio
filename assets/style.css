@@ -629,6 +629,232 @@ html, body {
   padding: 16px;
 }
 
+/* ---------- Pillars (content-lab.html) ---------- */
+.hv2-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.hv2-pillar {
+  padding: 28px;
+  border-radius: 8px;
+  background: var(--cream-2);
+}
+
+.hv2-pillar__num {
+  font-family: var(--serif);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+  display: block;
+  margin-bottom: 14px;
+}
+
+.hv2-pillar h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 20px;
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+
+.hv2-pillar p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-muted);
+  margin: 0;
+}
+
+/* ---------- Process ---------- */
+.hv2-process {
+  background: #0c0b09;
+  padding: clamp(56px, 9vw, 110px) 24px;
+}
+
+.hv2-process .hv2-eyebrow { color: rgba(244, 241, 234, 0.6); }
+.hv2-process .hv2-section-title { color: var(--cream); }
+
+.hv2-process__grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.hv2-process__step {
+  border-top: 2px solid rgba(244, 241, 234, 0.25);
+  padding-top: 18px;
+}
+
+.hv2-process__index {
+  font-family: var(--serif);
+  font-size: 13px;
+  color: #c98a4b;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.hv2-process__step h4 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--cream);
+  margin: 0 0 8px;
+}
+
+.hv2-process__step p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(244, 241, 234, 0.65);
+  margin: 0;
+}
+
+/* ---------- Gallery ---------- */
+.hv2-gallery {
+  padding: clamp(56px, 9vw, 110px) 24px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.hv2-gallery__filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.hv2-filter {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 9px 18px;
+  border-radius: 20px;
+  border: 1px solid var(--ink-faint);
+  background: transparent;
+  color: var(--ink-muted);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.hv2-filter.active,
+.hv2-filter:hover {
+  background: var(--ink);
+  color: var(--cream);
+  border-color: var(--ink);
+}
+
+.hv2-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.hv2-gallery__tile {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 8px;
+  border: none;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
+  display: flex;
+  align-items: flex-end;
+}
+
+.hv2-gallery__tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.6) 100%);
+  transition: opacity 0.3s ease;
+}
+
+.hv2-gallery__tile:hover::after { opacity: 0.85; }
+
+.hv2-gallery__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(244, 241, 234, 0.92);
+  color: #0c0b09;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  z-index: 2;
+}
+
+.hv2-gallery__caption {
+  position: relative;
+  z-index: 2;
+  color: var(--cream);
+  font-size: 13px;
+  padding: 14px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- Lightbox ---------- */
+.hv2-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(10, 8, 6, 0.92);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.hv2-lightbox.open { display: flex; }
+
+.hv2-lightbox__content {
+  max-width: 900px;
+  width: 100%;
+  max-height: 85vh;
+}
+
+.hv2-lightbox__content img {
+  width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 6px;
+  display: block;
+}
+
+.hv2-lightbox__content iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 6px;
+}
+
+.hv2-lightbox__note {
+  color: var(--cream);
+  text-align: center;
+  font-size: 15px;
+}
+
+.hv2-lightbox__close {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  font-size: 32px;
+  color: var(--cream);
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+}
+
 /* ---------- Benefits ---------- */
 .hv2-benefits {
   display: grid;
@@ -857,6 +1083,9 @@ html, body {
   .hv2-benefits { grid-template-columns: 1fr; }
   .hv2-benefits__photo { min-height: 260px; }
   .hv2-testimonials__grid { grid-template-columns: 1fr; }
+  .hv2-pillars { grid-template-columns: 1fr; }
+  .hv2-process__grid { grid-template-columns: repeat(2, 1fr); }
+  .hv2-gallery__grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 600px) {

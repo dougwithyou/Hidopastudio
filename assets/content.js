@@ -103,6 +103,68 @@ const DEFAULT_CONTENT = {
     area: 'DOPA Studio · DC · Maryland · Virginia',
     copyright: '© 2026 DOPA Studio',
   },
+  content_lab: {
+    hero: {
+      eyebrow: 'hidopaLab · Laboratorio Creativo',
+      title: 'Tu brazo audiovisual, listo cada mes',
+      subtitle: 'Nos convertimos en una extensión de tu equipo para planificar, producir y crear el contenido que tu marca necesita — sin contratar personal a tiempo completo.',
+      cta_primary_label: 'Habla con nosotros',
+      cta_primary_href: '#',
+      cta_secondary_label: 'Ver trabajos',
+      cta_secondary_href: '#gallery',
+      image: 'assets/images/weddings-hero.jpg',
+    },
+    pillars: {
+      eyebrow: 'Cómo te ayudamos',
+      title: 'Nos convertimos en tu brazo audiovisual',
+      items: [
+        { title: 'Claridad absoluta', copy: 'Eliminamos la duda de qué publicar o cómo grabar — llegamos con un plan.' },
+        { title: 'Producción constante', copy: 'Un flujo de fotos y videos de alto nivel comercial, mes a mes.' },
+        { title: 'Libertad operativa', copy: 'Tú te concentras en tu negocio, nosotros en que luzca espectacular.' },
+      ],
+    },
+    process: {
+      eyebrow: 'Cómo trabajamos',
+      title: 'De la estrategia a la cámara',
+      steps: [
+        { title: 'Diagnóstico de marca', copy: 'Conocemos tu negocio, tus objetivos y tus retos. Diagnóstico inicial sin costo.' },
+        { title: 'Preproducción', copy: 'Conceptos, storyboards y dirección creativa antes de llegar a grabar.' },
+        { title: 'Producción', copy: 'Una jornada de dirección, grabación y fotografía — sin improvisar.' },
+        { title: 'Entrega', copy: 'Contenido editado y listo para publicar, a tiempo para tu mes.' },
+      ],
+    },
+    gallery: {
+      eyebrow: 'Trabajos',
+      title: 'Lo que hemos creado',
+      items: [
+        { type: 'photo', caption: 'Sesión de marca', image: 'assets/images/weddings-hero.jpg' },
+        { type: 'video', caption: 'Reel de producto', image: 'assets/images/weddings-hero.jpg', video_url: '' },
+        { type: 'photo', caption: 'Fotografía de producto', image: 'assets/images/weddings-hero.jpg' },
+        { type: 'video', caption: 'Detrás de cámaras', image: 'assets/images/weddings-hero.jpg', video_url: '' },
+        { type: 'photo', caption: 'Contenido para redes', image: 'assets/images/weddings-hero.jpg' },
+        { type: 'photo', caption: 'Cobertura de evento', image: 'assets/images/weddings-hero.jpg' },
+      ],
+    },
+    testimonials: {
+      eyebrow: 'Clientes',
+      title: 'Lo que dicen las marcas que confían en hidopaLab',
+      pending_note: 'Reseñas reales próximamente — este espacio ya está listo para recibirlas.',
+      items: [
+        { quote: '', author: '', role: '' },
+        { quote: '', author: '', role: '' },
+        { quote: '', author: '', role: '' },
+      ],
+    },
+    final_cta: {
+      title: '¿Listos para avanzar?',
+      copy: 'Si sientes que esto es lo que tu marca necesita, empecemos con un diagnóstico gratuito.',
+      cta_primary_label: 'WhatsApp',
+      cta_primary_href: '#',
+      cta_secondary_label: 'Instagram',
+      cta_secondary_href: '#',
+      image: 'assets/images/weddings-hero.jpg',
+    },
+  },
 };
 
 function getByPath(obj, path) {
