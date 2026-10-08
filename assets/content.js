@@ -123,6 +123,20 @@ const DEFAULT_CONTENT = {
         { title: 'Libertad operativa', copy: 'Tú te concentras en tu negocio, nosotros en que luzca espectacular.' },
       ],
     },
+    webdev: {
+      eyebrow: 'Más allá del contenido',
+      title: 'También construimos tu infraestructura digital',
+      subtitle: 'Páginas web, reservas y automatización para que tu negocio funcione mejor, no solo se vea mejor.',
+      cta_label: 'Hablemos de tu proyecto digital',
+      cta_href: '#',
+      items: [
+        { icon: '◱', title: 'Landing Page / Sitio Web', copy: 'Diseño profesional y responsivo, listo para convertir visitas en clientes.' },
+        { icon: '◷', title: 'Sistema de Reservas', copy: 'Que tus clientes agenden su cita solos, sin depender de mensajes manuales.' },
+        { icon: '◈', title: 'CRM', copy: 'Organiza y da seguimiento a tus clientes y su historial en un solo lugar.' },
+        { icon: '✉', title: 'Email Marketing', copy: 'Mantente en contacto con tu base de clientes con campañas y promociones.' },
+        { icon: '✦', title: 'Automatizaciones con IA', copy: 'Flujos inteligentes que ahorran tiempo en tareas repetitivas de tu negocio.' },
+      ],
+    },
     process: {
       eyebrow: 'Cómo trabajamos',
       title: 'De la estrategia a la cámara',
